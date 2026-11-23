@@ -92,9 +92,9 @@ td.km{text-align:right;font:800 24px "Barlow Condensed";white-space:nowrap}
 .road b{font:800 24px "Barlow Condensed";display:block}.road span{font-size:14px;color:var(--mute)}
 .alt{background:var(--card)}
 /* gallery */
-.gal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:220px;gap:10px;margin-top:28px}
-.gal img{width:100%;height:100%;object-fit:cover;border-radius:4px}
-.gal .t{grid-row:span 2}.gal .w{grid-column:span 2}
+.gal{columns:4 220px;column-gap:10px;margin-top:28px}
+.gal img{width:100%;height:auto;margin:0 0 10px;border-radius:4px;break-inside:avoid}
+
 /* partners */
 .partners{position:relative;color:#fff;background:#141210;overflow:hidden}
 .partners>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.32}
@@ -120,10 +120,10 @@ td.km{text-align:right;font:800 24px "Barlow Condensed";white-space:nowrap}
 .contact small{display:block;color:var(--mute);font-size:14px}.contact b{font-size:19px;overflow-wrap:anywhere}
 footer{background:#141210;color:#b9ae9f;font-size:14px;padding:26px max(5vw,16px)}
 footer .wrap{display:flex;flex-wrap:wrap;gap:10px 30px;justify-content:space-between}
-@media(max-width:900px){.stats .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}.stat:nth-child(2){border:0}.offer,.contact{grid-template-columns:repeat(2,minmax(0,1fr))}.gal{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:900px){.stats .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}.stat:nth-child(2){border:0}.offer,.contact{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.split{grid-template-columns:minmax(0,1fr)}.offer,.contact{grid-template-columns:minmax(0,1fr)}.road{grid-template-columns:repeat(2,minmax(0,1fr))}
 .links{margin-left:0;width:100%;overflow-x:auto;flex-wrap:nowrap}.links a{flex:none}
-.gal{grid-auto-rows:160px}.count div{min-width:60px;padding:8px}
+.gal{columns:2 140px}.count div{min-width:60px;padding:8px}
 table.stack thead{display:none}table.stack tr{display:grid;grid-template-columns:48px minmax(0,1fr) auto;gap:4px 10px;padding:12px 0;border-bottom:1px solid #2f2a25}
 table.stack td{border:0;padding:0}table.stack td.n{grid-row:span 2}table.stack td.km{text-align:right}table.stack td.d{grid-column:2}table.stack td.s{grid-column:3;text-align:right}table.stack td.pos{grid-column:3;text-align:right}}
 </style>
@@ -190,7 +190,7 @@ table.stack td{border:0;padding:0}table.stack td.n{grid-row:span 2}table.stack t
 <ul class="res">
 <li><span class="p">1° M-2</span><div><b>Termas de Río Hondo · CANAV</b><span>2ª fecha del Campeonato Argentino de Rally Raid, agosto 2026</span></div></li>
 <li><span class="p">3° M-1</span><div><b>Desafío Ansenuza</b><span>Villa Ojo de Agua</span></div></li>
-<li><span class="p">NAV</span><div><b>Entrenamiento de navegación</b><span>Entrenamiento con Cornejo en el desierto de Iquique, Chile</span></div></li>
+<li><span class="p">NAV</span><div><b>Entrenamiento de navegación</b><span>Con Cornejo, hermano de Nacho Cornejo (piloto del Dakar), en Iquique, Chile</span></div></li>
 </ul>
 <div class="road" aria-label="Hoja de ruta">
 <div class="on"><b>NOV 2026</b><span>SARR Series, San Juan</span></div>
@@ -205,7 +205,7 @@ table.stack td{border:0;padding:0}table.stack td.n{grid-row:span 2}table.stack t
 <section class="band" id="preparacion"><div class="wrap">
 <span class="tag">Preparación · Iquique, Chile</span>
 <h2>Entrenando navegación en el desierto de Atacama</h2>
-<p class="lede">Invertí en un entrenamiento de navegación con Cornejo en Iquique, Chile: roadbook digital, lectura de rumbos y horas de moto en el desierto, con equipo de asistencia y análisis de cada recorrido. Es la base para llegar al Mundial y al Dakar.</p>
+<p class="lede">Invertí en un entrenamiento de navegación en Iquique, Chile, con Cornejo, hermano de Nacho Cornejo, piloto chileno del Dakar: roadbook digital, lectura de rumbos y horas de moto en el desierto, con equipo de asistencia y análisis de cada recorrido. Es la base para llegar al Mundial y al Dakar.</p>
 <div class="nav3">
 <img src="img/nav-roadbook.jpg" alt="Vista desde la moto con el roadbook digital en el desierto de Iquique" loading="lazy">
 <img src="img/nav-equipo.jpg" alt="Análisis de recorridos en las computadoras junto a la camioneta de asistencia" loading="lazy">
@@ -233,12 +233,32 @@ table.stack td{border:0;padding:0}table.stack td.n{grid-row:span 2}table.stack t
 <h2>Media</h2>
 <p class="lede">Carreras, entrenamientos y navegación. Más videos en <a href="https://www.youtube.com/@Ozne179">YouTube</a> y <a href="https://www.tiktok.com/@oznerol179">TikTok</a>.</p>
 <div class="gal">
-<img class="t" src="img/agua.jpg" alt="Cruce de agua con la moto" loading="lazy">
-<img class="w" src="img/costado.jpg" alt="Lorenzo acelerando sobre barro" loading="lazy">
+<img src="img/media/m01.jpg" alt="Lorenzo Ghione en carrera: cruce de río con la moto" loading="lazy">
+<img src="img/media/m02.jpg" alt="Lorenzo Ghione en carrera: cruce de río salpicando agua" loading="lazy">
+<img src="img/media/m03.jpg" alt="Lorenzo Ghione en carrera: a fondo sobre barro" loading="lazy">
+<img src="img/media/m04.jpg" alt="Lorenzo Ghione en carrera: sobre la salina mojada" loading="lazy">
+<img src="img/media/m05.jpg" alt="Lorenzo Ghione en carrera: acelerando en la salina" loading="lazy">
+<img src="img/media/m06.jpg" alt="Lorenzo Ghione en carrera: llegando de frente entre los arbustos" loading="lazy">
+<img src="img/media/m07.jpg" alt="Lorenzo Ghione en carrera: de costado en el salar" loading="lazy">
+<img src="img/media/m08.jpg" alt="Lorenzo Ghione en carrera: mirando a cámara sobre la moto" loading="lazy">
+<img src="img/media/m09.jpg" alt="Lorenzo Ghione en carrera: en el salar" loading="lazy">
+<img src="img/media/m10.jpg" alt="Lorenzo Ghione en carrera: girando en el salar" loading="lazy">
+<img src="img/media/m11.jpg" alt="Lorenzo Ghione en carrera: de frente entre arbustos" loading="lazy">
+<img src="img/media/m12.jpg" alt="Lorenzo Ghione en carrera: en el campo abierto" loading="lazy">
+<img src="img/media/m13.jpg" alt="Lorenzo Ghione en carrera: camino entre árboles y cactus" loading="lazy">
+<img src="img/media/m14.jpg" alt="Lorenzo Ghione en carrera: vista desde arriba en un camino de arena" loading="lazy">
+<img src="img/media/m15.jpg" alt="Lorenzo Ghione en carrera: cruce de agua de frente" loading="lazy">
+<img src="img/media/m16.jpg" alt="Lorenzo Ghione en carrera: cruce de agua en blanco y negro" loading="lazy">
+<img src="img/media/m17.jpg" alt="Lorenzo Ghione en carrera: cruce de agua con salpicadura" loading="lazy">
+<img src="img/media/m18.jpg" alt="Lorenzo Ghione en carrera: salpicadura en el cruce de agua" loading="lazy">
+<img src="img/media/m19.jpg" alt="Lorenzo Ghione en carrera: reflejo en el agua" loading="lazy">
+<img src="img/media/m20.jpg" alt="Lorenzo Ghione en carrera: bajando hacia el río" loading="lazy">
+<img src="img/agua.jpg" alt="Cruce de agua con la moto" loading="lazy">
+<img src="img/costado.jpg" alt="Lorenzo acelerando sobre barro" loading="lazy">
 <img src="img/canav35.jpg" alt="Curva en tierra roja con la moto" loading="lazy">
 <img src="img/mirada.jpg" alt="Lorenzo mirando a cámara sobre la moto" loading="lazy">
-<img class="w" src="img/aerea.jpg" alt="Vista aérea de Lorenzo en un camino de tierra" loading="lazy">
-<img class="t" src="img/estadio.jpg" alt="Lorenzo con el autódromo de fondo" loading="lazy">
+<img src="img/aerea.jpg" alt="Vista aérea de Lorenzo en un camino de tierra" loading="lazy">
+<img src="img/estadio.jpg" alt="Lorenzo con el autódromo de fondo" loading="lazy">
 <img src="img/atardecer.jpg" alt="Lorenzo de costado al atardecer" loading="lazy">
 <img src="img/matorral.jpg" alt="Lorenzo saliendo del monte" loading="lazy">
 </div>
