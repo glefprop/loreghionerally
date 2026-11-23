@@ -113,6 +113,13 @@ td.km{text-align:right;font:800 24px "Barlow Condensed";white-space:nowrap}
 .spons{list-style:none;margin:26px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}
 .spons li{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:22px 18px;min-height:110px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
 .spons b{font:800 28px/1 "Barlow Condensed",sans-serif}.spons span{font-size:14px;color:var(--mute);margin-top:6px}
+/* donaciones */
+.don{background:var(--red);color:#fff}.don .lede{color:#fff;opacity:.95}.don .tag{background:#141210;color:var(--plate)}
+.don-in{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.alias{background:#141210;border-radius:8px;padding:28px;text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center}
+.alias small{font-size:14px;opacity:.8}.alias b{font:800 clamp(36px,5vw,52px)/1 "Barlow Condensed",sans-serif;color:var(--plate);overflow-wrap:anywhere}
+.alias .btn{background:#fff;color:#141210;cursor:pointer}.alias .btn:hover{background:var(--plate)}
+@media(max-width:600px){.don-in{grid-template-columns:minmax(0,1fr)}}
 /* contact */
 .contact{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:26px}
 .contact a{display:block;background:var(--card);border:1px solid var(--line);padding:20px;border-radius:6px;text-decoration:none;min-height:44px}
@@ -132,7 +139,7 @@ table.stack td{border:0;padding:0}table.stack td.n{grid-row:span 2}table.stack t
 <header><nav class="nav" aria-label="Principal">
 <a class="logo" href="#inicio">LORENZO <b>GHIONE</b></a>
 <div class="links">
-<a href="#lorenzo">Lorenzo</a><a href="#rally">Rally</a><a href="#motocross">Motocross</a><a href="#media">Media</a><a href="#partners">Partners</a><a href="#contacto">Contacto</a><a class="live" href="#en-vivo">● En vivo</a>
+<a href="#lorenzo">Lorenzo</a><a href="#rally">Rally</a><a href="#motocross">Motocross</a><a href="#media">Media</a><a href="#partners">Partners</a><a href="#contacto">Contacto</a><a href="#apoyar">Apoyar</a><a class="live" href="#en-vivo">● En vivo</a>
 </div></nav></header>
 
 <section class="hero" id="inicio">
@@ -307,6 +314,21 @@ table.stack td{border:0;padding:0}table.stack td.n{grid-row:span 2}table.stack t
 </div>
 </div></section>
 
+<section class="band don" id="apoyar"><div class="wrap don-in">
+<div>
+<span class="tag">Sumate al sueño</span>
+<h2>Ayudame a llegar al Dakar</h2>
+<p class="lede">Como todos sabemos, llegar al Dakar es un objetivo muy costoso, y entrenar para llegar también lo es: inscripciones, viajes, repuestos, neumáticos y entrenamiento de navegación. Si querés ser parte de este camino, cualquier ayuda suma y me acerca un poco más al objetivo.</p>
+<p style="margin:0">¡Gracias de corazón a cada uno que colabora!</p>
+</div>
+<div class="alias">
+<small>Alias de Mercado Pago</small>
+<b id="alias">ghione.moto</b>
+<button class="btn r" id="copyAlias" type="button">Copiar alias</button>
+<small id="copied" aria-live="polite"></small>
+</div>
+</div></section>
+
 <footer><div class="wrap"><span>© 2026 Lorenzo Ghione · Córdoba, Argentina</span><span>Del motocross al Dakar</span></div></footer>
 
 <script>
@@ -320,6 +342,7 @@ const lab=document.getElementById('liveLabel'),cnt=document.getElementById('coun
 const tick=()=>{const now=new Date();if(now>=end){lab.textContent='Carrera terminada';cnt.hidden=true;return}if(now>=start){lab.textContent='En carrera';cnt.hidden=true;return}
 const d=start-now;document.getElementById('cd').textContent=Math.floor(d/864e5);document.getElementById('ch').textContent=Math.floor(d/36e5)%24;document.getElementById('cm').textContent=Math.floor(d/6e4)%60};
 tick();setInterval(tick,30000);
+document.getElementById('copyAlias').addEventListener('click',()=>{const m=document.getElementById('copied');navigator.clipboard.writeText('ghione.moto').then(()=>{m.textContent='¡Alias copiado!'},()=>{m.textContent='Copialo a mano: ghione.moto'})});
 }
 </script>
 </body>
