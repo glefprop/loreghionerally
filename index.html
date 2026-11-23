@@ -73,6 +73,7 @@ td.km{text-align:right;font:800 24px "Barlow Condensed";white-space:nowrap}
 .et{display:inline-grid;place-items:center;width:38px;height:38px;background:var(--red);font:800 22px "Barlow Condensed";border-radius:4px}
 .st{font-size:14px;font-weight:600;padding:4px 10px;border-radius:20px;background:#2f2a25;white-space:nowrap}
 .st.now{background:var(--plate);color:#141210}.st.done{background:#3d6b3a}
+.dorsal{width:min(260px,100%);border-radius:6px}
 .note{font-size:14px;opacity:.7;margin-top:14px}
 /* split */
 .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
@@ -151,8 +152,10 @@ table.stack td{border:0;padding:0}table.stack td.n{grid-row:span 2}table.stack t
 <div>
 <p style="margin:0 0 6px;font-weight:600"><span class="dot"></span><span id="liveLabel">Próxima carrera</span></p>
 <h2>SARR Series 2026 · San Juan</h2>
-<p class="lede" style="color:#cfc4b4;margin-top:8px">Final del Campeonato Latinoamericano de Rally Raid. Del 25 al 29 de noviembre, 5 etapas y más de 1.225 km.</p>
+<p class="lede" style="color:#cfc4b4;margin-top:8px">4ª y última fecha del Campeonato Latinoamericano de Rally Raid. Del 25 al 29 de noviembre, 5 etapas y más de 1.225 km.</p>
+<p style="margin:10px 0 0;font:800 30px 'Barlow Condensed',sans-serif">Corro con el <span style="color:var(--plate)">#35</span></p>
 </div>
+<img class="dorsal" src="img/dorsal-sarr.jpg" alt="Placa oficial del SARR Series 2026 con el número 35 de Ghione" loading="lazy">
 <div class="count" id="count" aria-live="polite">
 <div><b id="cd">–</b><small>días</small></div><div><b id="ch">–</b><small>horas</small></div><div><b id="cm">–</b><small>min</small></div>
 </div>
