@@ -105,6 +105,10 @@ td.km{text-align:right;font:800 24px "Barlow Condensed";white-space:nowrap}
 .pk{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 28px}
 .pk span{background:var(--red);padding:8px 14px;border-radius:4px;font-weight:600;white-space:nowrap}
 .pk span.c{background:transparent;border:2px solid var(--plate);color:var(--plate)}
+/* preparacion */
+.nav3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:26px}
+.nav3 img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:6px}
+@media(max-width:600px){.nav3{grid-template-columns:minmax(0,1fr)}.nav3 img{aspect-ratio:4/3}}
 /* sponsors */
 .spons{list-style:none;margin:26px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}
 .spons li{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:22px 18px;min-height:110px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
@@ -186,7 +190,7 @@ table.stack td{border:0;padding:0}table.stack td.n{grid-row:span 2}table.stack t
 <ul class="res">
 <li><span class="p">1° M-2</span><div><b>Termas de Río Hondo · CANAV</b><span>2ª fecha del Campeonato Argentino de Rally Raid, agosto 2026</span></div></li>
 <li><span class="p">3° M-1</span><div><b>Desafío Ansenuza</b><span>Villa Ojo de Agua</span></div></li>
-<li><span class="p">NAV</span><div><b>Entrenamiento de navegación</b><span>Preparación con Cornejo y travesías de 500 km con roadbook</span></div></li>
+<li><span class="p">NAV</span><div><b>Entrenamiento de navegación</b><span>Entrenamiento con Cornejo en el desierto de Iquique, Chile</span></div></li>
 </ul>
 <div class="road" aria-label="Hoja de ruta">
 <div class="on"><b>NOV 2026</b><span>SARR Series, San Juan</span></div>
@@ -198,7 +202,18 @@ table.stack td{border:0;padding:0}table.stack td.n{grid-row:span 2}table.stack t
 <div class="ph"><img src="img/podio.jpg" alt="Lorenzo con el trofeo de 1° puesto Motos M-2 en Termas de Río Hondo 2026" loading="lazy"></div>
 </div></section>
 
-<section class="band" id="motocross"><div class="wrap split">
+<section class="band" id="preparacion"><div class="wrap">
+<span class="tag">Preparación · Iquique, Chile</span>
+<h2>Entrenando navegación en el desierto de Atacama</h2>
+<p class="lede">Invertí en un entrenamiento de navegación con Cornejo en Iquique, Chile: roadbook digital, lectura de rumbos y horas de moto en el desierto, con equipo de asistencia y análisis de cada recorrido. Es la base para llegar al Mundial y al Dakar.</p>
+<div class="nav3">
+<img src="img/nav-roadbook.jpg" alt="Vista desde la moto con el roadbook digital en el desierto de Iquique" loading="lazy">
+<img src="img/nav-equipo.jpg" alt="Análisis de recorridos en las computadoras junto a la camioneta de asistencia" loading="lazy">
+<img src="img/nav-motos.jpg" alt="Motos de rally preparadas en el desierto de Atacama" loading="lazy">
+</div>
+</div></section>
+
+<section class="band alt" id="motocross"><div class="wrap split">
 <div class="ph w"><img src="img/jerseys.jpg" alt="Jersey Ghione 179 enmarcado junto a jerseys de pilotos del supercross de Estados Unidos" loading="lazy"></div>
 <div>
 <span class="tag">Motocross</span>
