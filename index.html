@@ -64,6 +64,7 @@ header{position:sticky;top:0;z-index:20;background:#141210;color:#fff}
 table{width:100%;border-collapse:collapse}
 th{text-align:left;font-size:14px;font-weight:600;opacity:.7;padding:8px 10px;border-bottom:1px solid #3a342e}
 td{padding:14px 10px;border-bottom:1px solid #2f2a25;vertical-align:middle}
+td.pos{text-align:right;font:800 26px "Barlow Condensed";color:var(--plate);white-space:nowrap}
 td.km{text-align:right;font:800 24px "Barlow Condensed";white-space:nowrap}
 .et{display:inline-grid;place-items:center;width:38px;height:38px;background:var(--red);font:800 22px "Barlow Condensed";border-radius:4px}
 .st{font-size:14px;font-weight:600;padding:4px 10px;border-radius:20px;background:#2f2a25;white-space:nowrap}
@@ -115,7 +116,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 30px;justify-content:space-bet
 .links{margin-left:0;width:100%;overflow-x:auto;flex-wrap:nowrap}.links a{flex:none}
 .gal{grid-auto-rows:160px}.count div{min-width:60px;padding:8px}
 table.stack thead{display:none}table.stack tr{display:grid;grid-template-columns:48px minmax(0,1fr) auto;gap:4px 10px;padding:12px 0;border-bottom:1px solid #2f2a25}
-table.stack td{border:0;padding:0}table.stack td.n{grid-row:span 2}table.stack td.km{text-align:right}table.stack td.d{grid-column:2}table.stack td.s{grid-column:3;text-align:right}}
+table.stack td{border:0;padding:0}table.stack td.n{grid-row:span 2}table.stack td.km{text-align:right}table.stack td.d{grid-column:2}table.stack td.s{grid-column:3;text-align:right}table.stack td.pos{grid-column:3;text-align:right}}
 </style>
 </head>
 <body>
@@ -153,10 +154,11 @@ table.stack td{border:0;padding:0}table.stack td.n{grid-row:span 2}table.stack t
 </div>
 </div>
 <table class="stack">
-<thead><tr><th>Etapa</th><th>Fecha</th><th>Recorrido</th><th>Km</th><th>Estado</th></tr></thead>
+<thead><tr><th>Etapa</th><th>Fecha</th><th>Recorrido</th><th>Km</th><th>Estado</th><th>Mi puesto</th></tr></thead>
 <tbody id="stages"></tbody>
 </table>
-<p class="note">Largada simbólica: miércoles 25/11 a las 21 h en el Parque Rivadavia. Los resultados de cada etapa los subo a Instagram, <a href="https://www.instagram.com/loreghione179/">@loreghione179</a>.</p>
+<p class="note">Largada simbólica: miércoles 25/11 a las 21 h en el Parque Rivadavia. Actualizo mi puesto al terminar cada etapa y lo cuento en Instagram, <a href="https://www.instagram.com/loreghione179/">@loreghione179</a>.</p>
+<div class="cta" style="margin-top:16px"><a class="btn r" href="https://sarrseries.com/#clasificacion">Clasificación oficial del campeonato</a><a class="btn o" href="https://sarrseries.com/mapas/">Mapas y etapas</a></div>
 </div></section>
 
 <section class="band" id="lorenzo"><div class="wrap split">
@@ -267,9 +269,10 @@ table.stack td{border:0;padding:0}table.stack td.n{grid-row:span 2}table.stack t
 
 <script>
 {
-const S=[["1","2026-11-25","Mié 25/11","Rivadavia › Albardón",95],["2","2026-11-26","Jue 26/11","Rivadavia › Mogna",360],["3","2026-11-27","Vie 27/11","Rivadavia › Media Agua",290],["4","2026-11-28","Sáb 28/11","Media Agua › Difunta Correa",320],["5","2026-11-29","Dom 29/11","Media Agua › Rivadavia",160]];
+/* Mi puesto por etapa: completar el último campo, ej. "3°" */
+const S=[["1","2026-11-25","Mié 25/11","Rivadavia › Albardón",95,""],["2","2026-11-26","Jue 26/11","Rivadavia › Mogna",360,""],["3","2026-11-27","Vie 27/11","Rivadavia › Media Agua",290,""],["4","2026-11-28","Sáb 28/11","Media Agua › Difunta Correa",320,""],["5","2026-11-29","Dom 29/11","Media Agua › Rivadavia",160,""]];
 const today=new Date(Date.now()-3*3600e3).toISOString().slice(0,10);
-document.getElementById('stages').innerHTML=S.map(s=>{const st=today>s[1]?'<span class="st done">Terminada</span>':today===s[1]?'<span class="st now">Hoy</span>':'<span class="st">Próxima</span>';return `<tr><td class="n"><span class="et">${s[0]}</span></td><td class="d">${s[2]}</td><td>${s[3]}</td><td class="km">${s[4]} km</td><td class="s">${st}</td></tr>`}).join('');
+document.getElementById('stages').innerHTML=S.map(s=>{const st=today>s[1]?'<span class="st done">Terminada</span>':today===s[1]?'<span class="st now">Hoy</span>':'<span class="st">Próxima</span>';return `<tr><td class="n"><span class="et">${s[0]}</span></td><td class="d">${s[2]}</td><td>${s[3]}</td><td class="km">${s[4]} km</td><td class="s">${st}</td><td class="pos">${s[5]||"—"}</td></tr>`}).join('');
 const start=new Date('2026-11-25T21:00:00-03:00'),end=new Date('2026-11-30T00:00:00-03:00');
 const lab=document.getElementById('liveLabel'),cnt=document.getElementById('count');
 const tick=()=>{const now=new Date();if(now>=end){lab.textContent='Carrera terminada';cnt.hidden=true;return}if(now>=start){lab.textContent='En carrera';cnt.hidden=true;return}
